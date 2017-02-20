@@ -1,0 +1,34 @@
+2017-02-14 01:04:02,820 [19] INFO  - === Initializing test === 
+
+2017-02-14 01:04:02,829 [19] INFO  - SteamTest
+
+2017-02-14 01:04:02,876 [19] INFO  - === 1. Open Main Page===
+
+2017-02-14 01:04:06,438 [19] INFO  - Button 'Location games button' :: Clicking
+
+2017-02-14 01:04:06,607 [19] INFO  - Button 'Action games' :: Clicking
+
+2017-02-14 01:04:06,607 [19] INFO  - === 2. Move to the Action Game Page ===
+
+2017-02-14 01:04:09,308 [19] INFO  - Link 'Discount tab' :: Clicking
+
+2017-02-14 01:04:10,806 [19] INFO  - Find the game with max price
+
+2017-02-14 01:04:12,059 [19] INFO  - Button 'Game with max price' :: Clicking
+
+2017-02-14 01:04:12,141 [19] INFO  - === 3. Move to the Download Game Page ===
+
+2017-02-14 01:04:12,504 [19] INFO  - Checking game params for equal
+
+2017-02-14 01:04:13,258 [19] INFO  - Button 'Download steam' :: Clicking
+
+2017-02-14 01:04:13,258 [19] INFO  - === 4. Move to the Download Steam Page ===
+
+2017-02-14 01:04:25,351 [19] INFO  - Checking dowloading steam file
+
+2017-02-14 01:04:25,352 [19] DEBUG - Game is dowloaded
+
+2017-02-14 01:04:25,356 [19] INFO  - === Test resaults ===
+
+2017-02-14 01:04:25,356 [19] INFO  - SteamTest : Passed
+

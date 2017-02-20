@@ -1,0 +1,69 @@
+﻿Discovering target: Default
+Discovering tests from assembly: D:\REPOS\i.kovalyov\Task_4_SpecFlow\Task_4_SpecFlow\bin\Debug\Task_4_SpecFlow.dll
+Appdomain Disposed
+Test Suite Dump
+#0: Task_4_SpecFlow/Default - 
+#1: Default - 
+#2: Task_4_SpecFlow - 
+#3: CarsTestsFeature - 
+#4: Open main page 'Cars.com' - TestAssembly:Task_4_SpecFlow/Feature:CarsTestsFeature/Scenario:Open+main+page+%27Cars.com%27
+End: Test Suite Dump
+Thread#0:Scheduler: get next test for thread
+Thread#:Scheduler: testitem #4 from normal test queue 
+Thread#0:Scheduler: considering testitem #4 for thread
+Thread#0:Scheduler: using testitem #4 for thread
+Thread#0:Scheduler: Test #4 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread #0: creating new test thread executor for Task_4_SpecFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null (target: Default)
+Loading SpecRun type 'TechTalk.SpecRun.Framework.TestAssemblyExecutor' from: C:\Users\ivan\AppData\Local\Temp\VisualStudioTestExplorerExtensions\SpecRun.Runner.1.5.2\tools\TechTalk.SpecRun.Framework.Executor.dll
+Thread#0: Test #4/0 is started on thread #0
+Thread#0:B:Given Open browser on main page
+Thread#0:T:error: Адресат вызова создал исключение.
+Thread#0:B:When Title is correct
+Thread#0:T:skipped because of previous errors
+Thread#0:B:Then Click Buy button
+Thread#0:T:skipped because of previous errors
+Thread#0:Scheduler: reschedule tests for testitem #0
+Thread#0:Scheduler: get next test for thread
+Thread#:Scheduler: dequeuing a rescheduled testitem: #4
+Thread#0:Scheduler: considering testitem #4 for thread
+Thread#0:Scheduler: using testitem #4 for thread
+Thread#0:Scheduler: Test #4 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #4/0 is finished on thread #0 as Failed within 0,1591667 seconds
+Thread#0: Test #4/1 is started on thread #0
+Thread#0:B:Given Open browser on main page
+Thread#0:T:error: Адресат вызова создал исключение.
+Thread#0:B:When Title is correct
+Thread#0:T:skipped because of previous errors
+Thread#0:B:Then Click Buy button
+Thread#0:T:skipped because of previous errors
+Thread#0:Scheduler: get next test for thread
+Thread#:Scheduler: dequeuing a rescheduled testitem: #4
+Thread#0:Scheduler: considering testitem #4 for thread
+Thread#0:Scheduler: using testitem #4 for thread
+Thread#0:Scheduler: Test #4 is scheduled for thread
+Thread#0:Scheduler: with testItemExecutionIndex 0
+Thread#0: Test #4/1 is finished on thread #0 as Failed within 0,005004 seconds
+Thread#0: Test #4/2 is started on thread #0
+Thread#0:B:Given Open browser on main page
+Thread#0:T:error: Адресат вызова создал исключение.
+Thread#0:B:When Title is correct
+Thread#0:T:skipped because of previous errors
+Thread#0:B:Then Click Buy button
+Thread#0:T:skipped because of previous errors
+Thread#0:Scheduler: get next test for thread
+Thread#:Scheduler: at the end of normal test queue
+Thread#0:Scheduler: enumerator for thread is at end
+Thread#0:Scheduler: No more tests for thread 
+Thread#0: Test #4/2 is finished on thread #0 as Failed within 0,0055244 seconds
+Appdomain Disposed
+Thread#-1:Scheduler: get next test for thread
+Thread#:Scheduler: at the end of normal test queue
+Thread#-1:Scheduler: enumerator for thread is at end
+Total: 1 (test executions: 3)
+Succeeded: 0
+Ignored: 0
+Pending: 0
+Skipped: 0
+Failed: 1

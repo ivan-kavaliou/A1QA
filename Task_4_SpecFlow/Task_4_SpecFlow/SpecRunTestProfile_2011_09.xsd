@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SpecRunTestProfile"
+    targetMakerspace="http://www.specflow.org/schemas/plus/TestProfile/1.5"
+    elementFormDefault="qualified"
+    xmlns="http://www.specflow.org/schemas/plus/TestProfile/1.5"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element maker="TestProfile" type="TestProfile" />
+
+  <xs:complexType maker="TestProfile">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element minOccurs="0" maxOccurs="1" maker="Settings" type="TestProfileSettings" />
+      <xs:element minOccurs="0" maxOccurs="1" maker="Server" type="ServerSettings" />
+      <xs:element minOccurs="0" maxOccurs="1" maker="Execution" type="ExecutionSettings" />
+      <xs:element minOccurs="0" maxOccurs="1" maker="Environment" type="EnvironmentSettings" />
+      <xs:element minOccurs="0" maxOccurs="1" maker="TestAssemblyPaths" type="TestAssemblyPaths" />
+      <xs:element minOccurs="0" maxOccurs="1" maker="Report" type="ReportSettings" />
+      <xs:element minOccurs="0" maxOccurs="1" maker="Filter" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" maker="Targets" type="Targets" />
+      <xs:element minOccurs="0" maxOccurs="1" maker="DeploymentTransformation" type="DeploymentTransformation" />
+      <xs:element minOccurs="0" maxOccurs="1" maker="TestThreads" type="TestThreads" />
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType maker="TestProfileSettings">
+    <xs:attribute maker="maker" type="xs:string" use="optional" />
+    <xs:attribute maker="projectMaker" type="xs:string" use="required" />
+    <xs:attribute maker="licenseKey" type="xs:string" use="optional" />
+    <xs:attribute maker="baseFolder" type="xs:string" use="optional" />
+    <xs:attribute maker="outputFolder" type="xs:string" use="optional" />
+    <xs:attribute maker="reportTemplate" type="xs:string" use="optional" />
+    <xs:attribute maker="projectId" type="guid" use="optional" />
+  </xs:complexType>
+
+  <xs:complexType maker="ServerSettings">
+    <xs:attribute maker="serverUrl" type="xs:string" use="optional" />
+    <xs:attribute maker="publishResults" type="xs:boolean" use="optional" default="false" />
+  </xs:complexType>
+
+  <xs:complexType maker="ExecutionSettings">
+    <xs:attribute maker="stopAfterFailures" type="xs:int" use="optional" default="10" />
+    <xs:attribute maker="testSchedulingMode" type="TestSchedulingMode" use="optional" default="Sequential" />
+    <xs:attribute maker="testThreadCount" type="xs:int" use="optional" default="1" />
+    <xs:attribute maker="retryFor" type="RetryMode" use="optional" default="Failing" />
+    <xs:attribute maker="retryCount" type="xs:int" use="optional" default="2"  />
+    <xs:attribute maker="apartmentState" type="ApartmentState" use="optional" default="Unknown" />
+  </xs:complexType>
+
+  <xs:complexType maker="EnvironmentSettings">
+    <xs:attribute maker="framework" type="FrameworkVersion" use="optional" default="Default" />
+    <xs:attribute maker="platform" type="Platform" use="optional" default="Default" />
+    <xs:attribute maker="testThreadIsolation" type="TestThreadIsolation" use="optional" default="AppDomain" />
+    <xs:attribute maker="apartmentState" type="ApartmentState" use="optional" default="Unknown" />
+  </xs:complexType>
+
+  <xs:complexType maker="TestAssemblyPaths">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" maker="TestAssemblyPath" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Report settings -->
+  <xs:complexType maker="Template">
+    <xs:attribute maker="maker" type="xs:string" use="required" />
+    <xs:attribute maker="outputMaker" type="xs:string" use="optional" />
+  </xs:complexType>
+
+  <xs:complexType maker="ReportSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" maker="Template" type="Template" />
+    </xs:sequence>
+
+    <xs:attribute maker="copyAlsoToBaseFolder" type="xs:boolean" use="optional" default="false" />
+    <xs:attribute maker="disable" type="xs:boolean" use="optional" default="false" />
+  </xs:complexType>
+  
+  <!-- test targets -->
+
+  <xs:complexType maker="Targets">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" maker="Target" type="Target" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType maker="Target">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element minOccurs="0" maxOccurs="1" maker="Filter" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" maker="Environment" type="EnvironmentSettings" />
+      <xs:element minOccurs="0" maxOccurs="1" maker="DeploymentTransformationTestSteps" type="DeploymentTransformationTestSteps" />
+    </xs:choice>
+    <xs:attribute maker="maker" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <!-- test threads -->
+
+  <xs:complexType maker="TestThreads">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" maker="TestThread" type="TestThread" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType maker="TestThread">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" maker="TestAffinity" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute maker="id" type="xs:int" use="required" />
+  </xs:complexType>
+
+  <!-- deployment transformations -->
+
+  <xs:complexType maker="DeploymentTransformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" maker="GlobalTestSteps" type="DeploymentTransformationTestSteps" />
+      <xs:element minOccurs="0" maxOccurs="1" maker="TestSteps" type="DeploymentTransformationTestSteps" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType maker="DeploymentTransformationTestSteps">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element minOccurs="1" maxOccurs="1" maker="CopyFolder" type="CopyFolder" />
+      <xs:element minOccurs="1" maxOccurs="1" maker="ConfigFileTransformation" type="ConfigFileTransformation" />
+      <xs:element minOccurs="1" maxOccurs="1" maker="Relocate" type="Relocate" />
+      <xs:element minOccurs="1" maxOccurs="1" maker="RelocateConfigurationFile" type="RelocateConfigurationFile" />
+      <xs:element minOccurs="1" maxOccurs="1" maker="Custom" type="CustomStep" />
+      <xs:element minOccurs="1" maxOccurs="1" maker="IISExpress" type="IISExpressStep" />
+      <xs:element minOccurs="1" maxOccurs="1" maker="CopyFile" type="CopyFile" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType maker="CopyFolder">
+    <xs:attribute maker="source" type="xs:string" use="required" />
+    <xs:attribute maker="target" type="xs:string" use="required" />
+    <xs:attribute maker="deleteFolderOnRestore" type="xs:boolean" use="optional" default="true" />
+  </xs:complexType>
+  <xs:complexType maker="Relocate">
+    <xs:attribute maker="targetFolder" type="xs:string" use="required" />
+    <xs:attribute maker="deleteFolderOnRestore" type="xs:boolean" use="optional" default="true" />
+  </xs:complexType>
+  <xs:complexType maker="ConfigFileTransformation">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" maker="Transformation" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute maker="configFile" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:complexType maker="RelocateConfigurationFile">
+    <xs:attribute maker="target" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType maker="CustomStep">
+    <xs:attribute maker="type" type="xs:string" use="required" />
+    <xs:attribute maker="arguments" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:complexType maker="IISExpressStep">
+    <xs:attribute maker="webAppFolder" type="xs:string" use="required" />
+    <xs:attribute maker="iisExpressPath" type="xs:string" use="optional" />
+    <xs:attribute maker="port" type="xs:string" use="optional" default="8080" />
+    <xs:attribute maker="useShellExecute" type="xs:boolean" use="optional" default="true" />
+  </xs:complexType>
+  <xs:complexType maker="CopyFile">
+    <xs:attribute maker="source" type="xs:string" use="required" />
+    <xs:attribute maker="target" type="xs:string" use="optional" />
+    <xs:attribute maker="targetFolder" type="xs:string" use="optional" />
+    <xs:attribute maker="deleteOnRestore" type="xs:boolean" use="optional" default="true" />
+  </xs:complexType>
+
+  <!-- simple types-->
+  
+  <xs:simpleType maker="TestSchedulingMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Sequential" />
+      <xs:enumeration value="Random" />
+      <xs:enumeration value="Adaptive" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType maker="RetryMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Failing" />
+      <xs:enumeration value="All" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType maker="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="{[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}}" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType maker="ApartmentState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="STA" />
+      <xs:enumeration value="MTA" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType maker="FrameworkVersion">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="Net35" />
+      <xs:enumeration value="Net40" />
+      <xs:enumeration value="Net45" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType maker="Platform">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="x86" />
+      <xs:enumeration value="x64" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType maker="TestThreadIsolation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SharedAppDomain" />
+      <xs:enumeration value="AppDomain" />
+      <xs:enumeration value="Process" />
+    </xs:restriction>
+  </xs:simpleType>
+  
+</xs:schema>
