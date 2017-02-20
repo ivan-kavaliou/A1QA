@@ -134,8 +134,6 @@ namespace Task_4_SpecFlow
                 SoftAssert.AssertEqual(Garage.GetCarEngine(tempCarOnPage.Value), newCompareCarsPage.GetEngineString(tempCarOnPage.Key), "Engine  are not equal");
                 SoftAssert.AssertEqual(Garage.GetCarTransmission(tempCarOnPage.Value), newCompareCarsPage.GetTransmissionString(tempCarOnPage.Key), "Transmission are not equal");
             }
-
-            
         }
 
         [ScenarioCleanup()]
@@ -144,8 +142,6 @@ namespace Task_4_SpecFlow
             SoftAssert.AllErrors();
             CurrentBrowser.Quit();
         }
-
-
 
         public void RebuildCar(string carName)
         {

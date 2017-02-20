@@ -122,9 +122,9 @@
       <Project>{ACA7D04D-EA59-4F3C-8572-70F78BF6A131}</Project>
       <Name>Framework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Steps\Steps.csproj">
+    <ProjectReference Include="..\Steps\Models.csproj">
       <Project>{c0f5ba2d-5dc6-4fd5-88fd-9c362a295f78}</Project>
-      <Name>Steps</Name>
+      <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

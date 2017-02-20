@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "Framework\Fram
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsPages", "CarsPages\CarsPages.csproj", "{9DD450AE-CCB6-443A-87B5-0889891E986B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Steps", "Steps\Steps.csproj", "{C0F5BA2D-5DC6-4FD5-88FD-9C362A295F78}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Steps\Models.csproj", "{C0F5BA2D-5DC6-4FD5-88FD-9C362A295F78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
